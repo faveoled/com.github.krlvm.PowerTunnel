@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.github.krlvm.PowerTunnel</id>
+  
+  <name>PowerTunnel</name>
+  <summary> Powerful and extensible proxy server with anti-censorship functionality </summary>
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <description>
+    <p>
+      ## What is it
+    </p>
+    <p>
+      PowerTunnel is an extensible proxy server built on top of [LittleProxy](https://github.com/adamfisk/LittleProxy).
+    </p>
+    <p>
+      PowerTunnel provides an SDK that allows you to extend its functionality however you like, and even handle encrypted HTTPS traffic (powered by [LittleProxy-MITM](https://github.com/ganskef/LittleProxy-mitm)), which can be especially useful in web development. PowerTunnel has an Android version, so any plugin you write can work on almost all devices.
+    </p>
+    <p>
+      PowerTunnel was originally developed and is best known as a censorship bypass tool. This functionality has been spun off in the [LibertyTunnel](https://github.com/krlvm/LibertyTunnel) plugin which is installed by default, just like [DNS Resolver](https://github.com/krlvm/PowerTunnel-DNS) with DNS over HTTPS support.
+    </p>
+    <p>
+      #### Anti-censorship tool
+    </p>
+    <p>
+      Digital censorship has become widespread in authoritarian and developing countries: governments install DPI - Deep Packet Inspection systems - for Internet Service Providers, which allows analyzing and blocking traffic to websites they don&apos;t want you to see, forcing you to use slow and often paid proxies or VPN services with dubious privacy policy.
+    </p>
+    <p>
+      PowerTunnel is an active DPI circumvention utility - it works only on your PC and do not route your traffic through some third-party webservers. It creates a local proxy server on your device and diverts your HTTP(S) traffic there, where PowerTunnel modifies your traffic in a special way to exploit bugs in DPI systems which makes it possible to bypass the lock - without (significantly) slowing down your Internet connection.
+    </p>
+    <p>
+      Anti-censorship module can be configured in Plugins window - it is called LibertyTunnel.
+    </p>
+    <p>
+      In this sense, PowerTunnel is a free cross-platform implementation of [GoodbyeDPI](https://github.com/ValdikSS/GoodbyeDPI) written in Java.
+    </p>
+    <p>
+      Please, note that PowerTunnel does not change your IP address.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">com.github.krlvm.PowerTunnel.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/krlvm/PowerTunnel/master/.github/images/ui.png</image>
+    </screenshot>
+  </screenshots>
+</component>

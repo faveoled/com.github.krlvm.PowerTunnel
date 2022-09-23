@@ -1,0 +1,64 @@
+{
+  "app-id" : "com.github.krlvm.PowerTunnel",
+  "branch" : "stable",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "42",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-extensions" : [ "org.freedesktop.Sdk.Extension.openjdk11" ],
+  "command": "com.github.krlvm.PowerTunnel",
+  "finish-args" : [
+    "--env=PATH=/app/jre/bin:/usr/bin:/app/bin",
+    "--share=network",
+    "--socket=x11",
+    "--socket=fallback-x11",
+    "--share=ipc",
+    "--socket=wayland",
+    "--socket=pulseaudio",
+    "--device=dri"
+  ],
+  "modules" : [
+    {
+      "name" : "openjdk",
+      "buildsystem" : "simple",
+      "build-commands" : [ "/usr/lib/sdk/openjdk11/install.sh" ]
+    },
+    {
+      "name": "powertunnel",
+      "buildsystem": "simple",
+      "build-commands": [
+      	"cp powertunnel.jar /app/"
+      ],
+      "sources": [{
+        "type": "file",
+        "url": "https://github.com/krlvm/PowerTunnel/releases/download/v2.5.2/PowerTunnel.jar",
+        "dest-filename": "powertunnel.jar",
+        "sha256": "5250366ffc22fb366c8d15d1daa8ea89d87db874bcdd82ce8075f703859fce7d"
+      }]
+    },
+    {
+      "name": "powertunnel-startup",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -Dm755 powertunnel /app/bin/com.github.krlvm.PowerTunnel",
+        "install -Dm644 com.github.krlvm.PowerTunnel.desktop /app/share/applications/com.github.krlvm.PowerTunnel.desktop",
+        "install -Dm644 com.github.krlvm.PowerTunnel.metainfo.xml /app/share/metainfo/com.github.krlvm.PowerTunnel.metainfo.xml",
+        "install -Dm644 com.github.krlvm.PowerTunnel.png /app/share/icons/hicolor/256x256/apps/com.github.krlvm.PowerTunnel.png"
+      ],
+      "sources": [{
+        "type": "file",
+        "path": "powertunnel"
+      },
+      {
+        "type": "file",
+        "path": "com.github.krlvm.PowerTunnel.png"
+      },
+      {
+        "type": "file",
+        "path": "com.github.krlvm.PowerTunnel.desktop"
+      },{
+        "type": "file",
+        "path": "com.github.krlvm.PowerTunnel.metainfo.xml"
+      }]
+    }
+  ]
+}

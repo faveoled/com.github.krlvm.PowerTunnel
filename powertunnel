@@ -1,0 +1,5 @@
+#!/bin/sh
+APPBASE="/app/powertunnel"
+JAVAPATH="/app/jre"
+CP="$APPBASE/lib/powertunnel.jar"
+"$JAVAPATH/bin/java" -Djavafx.embed.singleThread=true -Dawt.useSystemAAFontSettings=on -cp "$CP" -jar /app/powertunnel.jar "$@"

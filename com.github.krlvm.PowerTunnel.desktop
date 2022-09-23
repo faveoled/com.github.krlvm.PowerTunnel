@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=PowerTunnel
+Comment= Powerful and extensible proxy server with anti-censorship functionality 
+Categories=Network;Java;
+
+Icon=com.github.krlvm.PowerTunnel.png
+Exec=com.github.krlvm.PowerTunnel
+Terminal=false
